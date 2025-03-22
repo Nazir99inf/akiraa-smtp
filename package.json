@@ -1,0 +1,17 @@
+{
+  "name": "akiraa-smtp",
+  "description": "This Module Only For Script Akiraa",
+  "author": "nazir_al",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^4.1.2",
+    "node-mailer": "^0.1.1",
+  },
+  "license": "ISC"
+}
