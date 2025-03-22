@@ -1,15 +1,31 @@
 {
   "name": "akiraa-smtp",
-  "description": "This Module Only For Script Akiraa",
+  "version": "1.0.0",
+  "description": "module only akiraabot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nazir99inf/akiraa-smtp.git"
+  },
+  "keywords": [
+    "modul",
+    "bailes",
+    "scurity",
+    "otp",
+    "botjs"
+  ],
+  "author": "Nazir99inf",
   "dependencies": {
     "axios": "^0.27.2",
     "chalk": "^4.1.2",
     "node-mailer": "^0.1.1"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nazir99inf/akiraa-smtp/issues"
+  },
+  "homepage": "https://github.com/Nazir99inf/akiraa-smtp#readme"
 }
