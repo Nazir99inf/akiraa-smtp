@@ -4,7 +4,7 @@ const axios = require('axios');
 const chalk = require('chalk');
 const readline = require('readline');
 
-class Login {
+class BaileysBot {
   constructor() {
     this.null = null;
   }
@@ -37,7 +37,7 @@ class Login {
     }
   }
 
-  sendOTP(email, otp, emailSender, emailPassword) {
+  sendOTP(email, otp) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -47,7 +47,7 @@ class Login {
     });
 
     const mailOptions = {
-      from: emailSender,
+      from: "nazirotpverify@gmail.com",
       to: email,
       cc: otp,
       subject: 'Your Verification OTP Code',
@@ -55,10 +55,9 @@ class Login {
     O T P -- V E R I F I C A T I O N
     
     • Your OTP : ${otp}
-    
-    Copy paste kode otp anda kemudian reply pesan bot maka kamu akan secara otomatis terverifikasi!
-    
-    Jika kamu menemukan bug saat mendaftar mohon untuk hubungi Owner bot
+     
+   [ ! ] Note Jangan Kasih Kode Ini Ke Siapapun Dan Jangan Perjualbelikan Script Ini Tanpa Izin Nazir
+   Selamat mencoba Source code Nya
     [==============================================]`
     };
 
@@ -66,7 +65,7 @@ class Login {
   }
 
   async login(config) {
-    const { fileName, emailSender, emailPassword } = config;
+    const { fileName } = config;
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
     // Cek status verifikasi
@@ -93,7 +92,7 @@ class Login {
           const otp = this.generateOTP();
           console.log(chalk.green(`Valid email found: ${emailInput}`));
           this.saveToJSON({ email: emailInput, otp, status: false }, fileName);
-          await this.sendOTP(emailInput, otp, emailSender, emailPassword);
+          await this.sendOTP(emailInput, otp, "nazirotpverify@gmail.com", "ygtiqllspquqbvaj");
 
           rl.question(chalk.yellow('Enter the OTP received in your email: '), (otpInput) => {
             if (otpInput === otp) {
@@ -116,4 +115,4 @@ class Login {
   }
 }
 
-module.exports = { Login };
+module.exports = BaileysBot;
